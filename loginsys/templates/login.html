@@ -1,0 +1,32 @@
+<h1> Login page</h1>
+<hr/>
+<form method="POST">
+    {% csrf token %}
+<table border="1">
+    <tr>
+        <td>
+            user name
+        </td>
+        <td> <input type="text" placeholder="enter user name" name="email" required> </td>
+    </tr>
+    <tr>
+        <td>
+            password
+        </td>
+        <td><input type="password" placeholder="enter a password" name="pwd" required></td>
+    </tr>
+    <tr>
+        <td>
+
+        </td>
+        <td><button type="submit">Login</button></td>
+    </tr>
+
+</table>
+{% if messages %}
+{% for msg in message %}
+<b>{{msg}}</b>
+
+{% end for %}
+{% endif %}
+</form>

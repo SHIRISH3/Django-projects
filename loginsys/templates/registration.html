@@ -1,0 +1,51 @@
+<h1>This is new user registration form</h1>
+
+<hr/>
+<form method="POST">
+    {% csrf token %}
+<table border ="1">
+    <tr>
+        <td>User Name</td>
+        <td><input type= "text" placeholder="username"></td>
+    </tr>
+    <tr>
+        <td>email</td>
+        <td><input type= "email" placeholder="email"></td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td><input type= "password" placeholder="pwd"></td>
+    </tr>
+    <tr>
+        <td>age</td>
+        <td><input type= "text" placeholder="age"></td>
+    </tr>
+    <tr>
+        <td>gender</td>
+        <td><input type= "radio" value="M" name="gender"> Male
+            <input type= "radio" value="F" name="gender">Female</td>
+    </tr>
+    <tr>
+        <td>maritialstatus</td>
+        <td><select name="maritialstatus">
+            <option value="Married">Married</option>
+            </option value="Single">Single</option>
+            <option value="Divorced">Divorced</option>
+        </select>
+    </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button type= "submit">Registration</button></td>
+    </tr>
+    
+</table>
+{% if messages %}
+{% for msg in message %}
+<b>{{msg}}</b>
+
+{% end for %}
+{% endif %}
+<hr/>
+<em> If you already registered member <a href="">sign in</a></em>
+</form>
